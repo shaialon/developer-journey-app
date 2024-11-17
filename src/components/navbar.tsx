@@ -29,8 +29,8 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Mission History', href: '/mission-history' },
+    { name: 'Current mission', href: '/' },
+    { name: 'Completed missions', href: '/mission-history' },
   ].map((route: any) => ({
     ...route,
     current: router.pathname === route.href,
@@ -85,10 +85,10 @@ export default function Navbar() {
               {session?.user?.name ? (
                 <>
                   <span className='block sm:hidden text-gray-300 rounded-md px-3 py-2 text-sm font-small'>
-                    {session.user.name.length < 20 ? (session.user.name) : (session.user.name.substring(0,18) + '...')}
+                    {session.user.name.length < 20 ? (session.user.name) : (session.user.name.substring(0, 18) + '...')}
                   </span>
                   <span className='hidden sm:block text-gray-300 rounded-md px-3 py-2 text-sm font-small'>
-                    {session.user.name.length < 30 ? (session.user.name) : (session.user.name.substring(0,28) + '...')}
+                    {session.user.name.length < 30 ? (session.user.name) : (session.user.name.substring(0, 28) + '...')}
                   </span>
                   <button
                     className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
